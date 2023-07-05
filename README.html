@@ -1,0 +1,94 @@
+<h1 id="color-generator">Color Generator</h1>
+<p>On va s'amuser (oui oui, s'amsuer) à générer des blocs de couleurs <em>Web</em>.</p>
+<p>L'idée est d'arriver à une page ressemblant <a href="screenshot.png">à celle ci</a> (attention, screenshot du début de la page uniquement).</p>
+<p>On pourrait très bien écrire le code HTML et CSS permettant d'afficher ceci. Mais on est fainéant, et PHP fera très bien l'affaire 😉</p>
+<h2 id="moyens">Moyens</h2>
+<ul>
+<li>Chaque rectangle de couleur est une balise <code>&lt;div&gt;</code></li>
+<li>Il faudra placer ces <code>&lt;div&gt;</code> les unes à côtés des autres avec un retour à la ligne si nécessaire pour ne pas avoir de scrollbar horizontale</li>
+<li>⚠️ Contrairement à d'habitude, certains styles de chaque balise devront être définis grâce à l'attribut <code>style="color:white"</code> (color n'étant qu'un exemple)</li>
+<li>certes, cette pratique n'est pas recommandée, mais là, on ne voit pas d'autre moyen</li>
+<li>Les styles plus génériques (appliqués à toutes les <code>&lt;div&gt;</code>) pourront être placés dans le fichier CSS fourni</li>
+<li>Il y a beaucoup de codes couleurs</li>
+<li>On va se limiter <strong>aux codes hexa sur 3 caractères</strong></li>
+<li>rappel : <code>#123</code> équivaut à <code>#112233</code></li>
+</ul>
+<h2 id="etapes">Etapes</h2>
+<p>Pour arriver au résultat attendu, on a découpé le code en plusieurs étapes.</p>
+<h3 id="etape-1">Etape 1</h3>
+<p>Lister dans une variable tous les caractères pour générer un code couleur Web (<code>#F00</code> pour rouge par exemple).  <br />
+Ne pas mettre le caractère <code>#</code> dans cette liste.</p>
+<p><strong>Indice</strong>  <br />
+<details>
+Il y a 16 valeurs possibles
+</details></p>
+<h3 id="etape-2">Etape 2</h3>
+<p>A partir de la variable de l'étape 1, afficher tous les codes couleur de nuances de gris. Une nuance de gris est composée de trois fois le même caractère (Ex : #555).</p>
+<p><strong>1er indice</strong><br />
+<details></p>
+<ul>
+<li>Le type de la variable de l'étape 1 est censé être un tableau</li>
+</ul>
+<p><strong>2ème indice</strong><br />
+<details></p>
+<ul>
+<li>ça doit afficher les codes suivants :  <br />
+<code>#000</code> <code>#111</code> <code>#222</code> <code>#333</code> <code>#444</code> <code>#555</code> <code>#666</code> <code>#777</code> <code>#888</code> <code>#999</code> <code>#AAA</code> <code>#BBB</code> <code>#CCC</code> <code>#DDD</code> <code>#EEE</code> <code>#FFF</code></li>
+</ul>
+<p></details></p>
+<p></details></p>
+<h3 id="etape-3">Etape 3</h3>
+<p>Créer des rectangles de couleur pour chaque nuance de gris de l'étape 2 (<a href="screenshot-grey.png">screenshot</a>).</p>
+<p><strong>1er indice</strong><br />
+<details></p>
+<ul>
+<li>utiliser la classe CSS <em>box</em> fournie dans le fichier <code>css/style.css</code></li>
+</ul>
+<p><strong>2ème indice</strong><br />
+<details></p>
+<ul>
+<li>ajouter un attribut style dans chaque box pour définir couleur et largeur</li>
+</ul>
+<p></details></p>
+<p></details></p>
+<h3 id="bonus-1">Bonus 1</h3>
+<p>A partir de la variable de l'étape 1, afficher toutes les nuances de couleurs possibles.</p>
+<p><strong>Indice</strong><br />
+<details></p>
+<p>ça doit afficher les codes suivants :  <br />
+<code>#000</code> <code>#001</code> <code>#002</code> <code>#003</code> <code>#004</code> <code>#005</code> <code>#006</code> <code>#007</code> <code>#008</code> <code>#009</code> <code>#00A</code> <code>#00B</code> <code>#00C</code> <code>#00D</code> <code>#00E</code> <code>#00F</code>  <br />
+<code>#010</code> <code>#011</code> <code>#012</code> <code>#013</code> <code>#014</code> <code>#015</code> <code>#016</code> <code>#017</code> <code>#018</code> <code>#019</code> <code>#01A</code> <code>#01B</code> <code>#01C</code> <code>#01D</code> <code>#01E</code> <code>#01F</code>  <br />
+<code>#020</code> <code>#021</code> <code>#022</code> <code>#023</code> <code>#024</code> <code>#025</code> <code>#026</code> <code>#027</code> <code>#028</code> <code>#029</code> <code>#02A</code> <code>#02B</code> <code>#02C</code> <code>#02D</code> <code>#02E</code> <code>#02F</code>  <br />
+etc.</p>
+<p></details></p>
+<h3 id="bonus-2">Bonus 2</h3>
+<p>Créer des rectangles de couleur pour chaque nuance de couleurs du bonus 1 (<a href="screenshot.png">screenshot</a>).</p>
+<p><strong>1er indice</strong><br />
+<details></p>
+<ul>
+<li>utiliser la classe CSS <em>box</em> fournie dans le fichier <code>css/style.css</code></li>
+</ul>
+<p><strong>2ème indice</strong>  <br />
+<details></p>
+<ul>
+<li>ajouter un attribut style dans chaque box pour définir couleur et largeur</li>
+</ul>
+<p></details></p>
+<p></details></p>
+<h3 id="bonus-3">Bonus 3</h3>
+<p>A l'étape 1, les 16 éléments possibles dans un code couleur ont été listés manuellement dans un tableau.  <br />
+Désormais, il faut générer ce tableau grâce à une seule boucle !</p>
+<p><strong>Indice</strong><br />
+<details></p>
+<ul>
+<li>tu peux convertir un nombre décimal (base 10) et hexadécimal (base 16) grâce à une fonction PHP</li>
+</ul>
+<p></details></p>
+<h3 id="bonus-4">Bonus 4</h3>
+<p>Quoi !! Encore !??!  <br />
+Si tu en es là, c'est que tu as brillament réussi les étapes précédentes 👍  <br />
+Sinon, laisse tomber, ça vaut pas le coup 😉</p>
+<p>On vient d'apprendre qu'il y a des couleurs garanties sur le Web, c'est-à-dire que certaines couleurs ne pourraient pas apparaitre ou alors incorrectement ?! WTF !  <br />
+https://fr.wikipedia.org/wiki/Couleur<em>du</em>Web#Couleurs<em>garanties</em>sur<em>le</em>web</p>
+<p>Ok. Soit !  <br />
+Dans un second fichier, refaire le challenge et y apporter les modifications nécessaires à n'afficher que les couleurs garanties sur le Web 😈</p>
